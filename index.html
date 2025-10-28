@@ -581,32 +581,38 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="footer-container">
     <div class="column">
       <h4>روابط سريعة</h4>
-      <a href="index.html">الرئيسية</a>
-      <a href="store.html">المتجر</a>
-      <a href="contact.html">اتصل بنا</a>
-      <a href="about.html">عن نعومة نعومتك</a>
-      <a href="shipping.html">شحن وتوصيل</a>
+      <div class="links-row">
+        <a href="index.html">الرئيسية</a>
+        <a href="store.html">المتجر</a>
+        <a href="contact.html">اتصل بنا</a>
+        <a href="about.html">عن نعومة نعومتك</a>
+        <a href="shipping.html">شحن وتوصيل</a>
+      </div>
     </div>
 
     <div class="column">
       <h4>سياساتنا</h4>
-      <a href="privacy.html">سياسة الخصوصية</a>
-      <a href="refund.html">الاسترجاع</a>
-      <a href="payment.html">الدفع</a>
+      <div class="links-row">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="refund.html">الاسترجاع</a>
+        <a href="payment.html">الدفع</a>
+      </div>
     </div>
 
-    <div class="column">
+    <div class="column subscribe">
       <h4>اشترك بالنشرة</h4>
-      <input type="email" placeholder="أدخل بريدك الإلكتروني" id="newsletterInput">
-      <button id="subscribeBtn">اشترك</button>
+      <div class="subscribe-box">
+        <input type="email" placeholder="أدخل بريدك الإلكتروني" id="newsletterInput">
+        <button id="subscribeBtn">اشترك</button>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
 .footer {
-  background-color: #f9f9f9;
-  padding: 40px 20px;
+  background-color: #fafafa;
+  padding: 40px 15px;
   text-align: right;
   font-family: "Cairo", sans-serif;
 }
@@ -614,71 +620,95 @@ document.addEventListener("DOMContentLoaded", () => {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: nowrap; /* يمنع النزول تحت بعض حتى في الهاتف */
 }
 
 .footer .column {
   flex: 1;
-  min-width: 250px;
+  min-width: 280px;
 }
 
 .footer h4 {
   color: #f79c05;
-  margin-bottom: 15px;
   font-size: 20px;
+  margin-bottom: 15px;
 }
 
-.footer a {
-  display: block;
+.links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.links-row a {
   color: #222;
   text-decoration: none;
-  margin-bottom: 10px;
+  font-size: 15px;
   transition: color 0.3s;
 }
 
-.footer a:hover {
+.links-row a:hover {
   color: #f79c05;
 }
 
-.footer input[type="email"] {
-  width: 100%;
+.subscribe-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.subscribe-box input[type="email"] {
+  flex: 1;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  margin-bottom: 10px;
   font-size: 15px;
 }
 
-.footer button {
+.subscribe-box button {
   background-color: #f79c05;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 18px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
 }
 
-.footer button:hover {
+.subscribe-box button:hover {
   background-color: #e48c00;
 }
 
-/* نمنع التغيير في الهاتف */
+/* ===== الهواتف ===== */
 @media (max-width: 768px) {
   .footer-container {
-    flex-wrap: nowrap !important;
-    flex-direction: row !important;
-    overflow-x: auto; /* يسمح بالتمرير الجانبي إذا لم تكف الشاشة */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .footer .column {
-    min-width: 250px;
+  .links-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .subscribe-box {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .subscribe-box input {
+    width: 70%;
   }
 }
 </style>
+
 
 
 
@@ -1154,6 +1184,7 @@ window.addEventListener('unload',()=>{
 </body>
 
 </html>
+
 
 
 
