@@ -579,27 +579,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <footer class="footer">
   <div class="footer-container">
-    <div class="column">
+    <div class="column quick-links">
       <h4>روابط سريعة</h4>
-      <div class="links-row">
-        <a href="index.html">الرئيسية</a>
-        <a href="store.html">المتجر</a>
-        <a href="contact.html">اتصل بنا</a>
-        <a href="about.html">عن نعومة نعومتك</a>
-        <a href="shipping.html">شحن وتوصيل</a>
-      </div>
+      <a href="index.html">الرئيسية</a>
+      <a href="store.html">المتجر</a>
+      <a href="contact.html">اتصل بنا</a>
+      <a href="about.html">عن نعومة نعومتك</a>
+      <a href="shipping.html">شحن وتوصيل</a>
     </div>
 
-    <div class="column">
+    <div class="column policies">
       <h4>سياساتنا</h4>
-      <div class="links-row">
-        <a href="privacy.html">سياسة الخصوصية</a>
-        <a href="refund.html">الاسترجاع</a>
-        <a href="payment.html">الدفع</a>
-      </div>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="refund.html">الاسترجاع</a>
+      <a href="payment.html">الدفع</a>
     </div>
 
-    <div class="column subscribe">
+    <div class="column newsletter">
       <h4>اشترك بالنشرة</h4>
       <div class="subscribe-box">
         <input type="email" placeholder="أدخل بريدك الإلكتروني" id="newsletterInput">
@@ -611,8 +607,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <style>
 .footer {
-  background-color: #fafafa;
-  padding: 40px 15px;
+  background-color: #f9f9f9;
+  padding: 40px 10px;
   text-align: right;
   font-family: "Cairo", sans-serif;
 }
@@ -621,49 +617,51 @@ document.addEventListener("DOMContentLoaded", () => {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: nowrap; /* يمنع النزول تحت بعض */
+  overflow-x: auto; /* يسمح بالتمرير إذا الشاشة ضيقة */
+  scrollbar-width: none;
+}
+
+.footer-container::-webkit-scrollbar {
+  display: none; /* يخفي شريط التمرير في الهاتف */
 }
 
 .footer .column {
   flex: 1;
-  min-width: 280px;
+  min-width: 300px;
+  text-align: center;
 }
 
 .footer h4 {
   color: #f79c05;
   font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.links-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-}
-
-.links-row a {
+.footer a {
+  display: inline-block;
+  margin: 0 8px;
   color: #222;
   text-decoration: none;
   font-size: 15px;
   transition: color 0.3s;
 }
 
-.links-row a:hover {
+.footer a:hover {
   color: #f79c05;
 }
 
 .subscribe-box {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 8px;
 }
 
 .subscribe-box input[type="email"] {
-  flex: 1;
+  width: 60%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -674,10 +672,10 @@ document.addEventListener("DOMContentLoaded", () => {
   background-color: #f79c05;
   color: white;
   border: none;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .subscribe-box button:hover {
@@ -686,28 +684,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ===== الهواتف ===== */
 @media (max-width: 768px) {
+  .footer {
+    padding: 25px 5px;
+  }
+
   .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: space-between;
   }
 
-  .links-row {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .subscribe-box {
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+  .footer .column {
+    min-width: 280px;
   }
 
   .subscribe-box input {
-    width: 70%;
+    width: 65%;
   }
 }
 </style>
+
 
 
 
@@ -1184,6 +1180,7 @@ window.addEventListener('unload',()=>{
 </body>
 
 </html>
+
 
 
 
