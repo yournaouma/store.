@@ -614,10 +614,10 @@ document.addEventListener("DOMContentLoaded", () => {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: nowrap; /* يمنع النزول تحت بعض حتى في الهاتف */
 }
 
 .footer .column {
@@ -666,24 +666,20 @@ document.addEventListener("DOMContentLoaded", () => {
   background-color: #e48c00;
 }
 
-/* ===== للهواتف ===== */
+/* نمنع التغيير في الهاتف */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    overflow-x: auto; /* يسمح بالتمرير الجانبي إذا لم تكف الشاشة */
   }
 
   .footer .column {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .footer input[type="email"] {
-    text-align: center;
+    min-width: 250px;
   }
 }
 </style>
+
 
 
 <style>
@@ -1158,6 +1154,7 @@ window.addEventListener('unload',()=>{
 </body>
 
 </html>
+
 
 
 
