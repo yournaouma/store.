@@ -603,10 +603,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   </div>
-
-  <div class="footer-bottom">
-    <p>نعومة نعومتك © 2025</p>
-  </div>
 </footer>
 
 <style>
@@ -616,20 +612,17 @@ body, html {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
 .footer {
-  width: 100%;
+  width: 100vw;
   background-color: #f9f9f9;
-  padding: 40px 0 10px 0;
+  padding: 40px 0;
   text-align: right;
   font-family: "Cairo", sans-serif;
   box-sizing: border-box;
-  margin: 0;
 }
 
-/* ===== الحاوية ===== */
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -640,15 +633,13 @@ body, html {
   overflow-x: auto;
   scrollbar-width: none;
   box-sizing: border-box;
-  padding: 0 0; /* إزالة أي مسافة جانبية */
-  margin: 0;
+  padding: 0 10px;
 }
 
 .footer-container::-webkit-scrollbar {
   display: none;
 }
 
-/* ===== الأعمدة ===== */
 .footer .column {
   flex: 1;
   min-width: 300px;
@@ -677,7 +668,6 @@ body, html {
   text-shadow: 0 0 8px #f79c05, 0 0 12px #f79c05;
 }
 
-/* ===== صندوق الاشتراك ===== */
 .subscribe-box {
   display: flex;
   align-items: center;
@@ -711,32 +701,17 @@ body, html {
   transform: scale(1.05);
 }
 
-/* ===== النص السفلي ===== */
-.footer-bottom {
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-}
-
-.footer-bottom p {
-  margin: 0;
-  color: #444;
-  font-size: 15px;
-}
-
 /* ===== الهواتف ===== */
 @media (max-width: 768px) {
   .footer {
-    padding: 25px 0 10px 0;
+    padding: 25px 0;
   }
 
   .footer-container {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: space-between;
-    padding: 0;
+    padding: 0 5px;
   }
 
   .footer .column {
@@ -746,12 +721,9 @@ body, html {
   .subscribe-box input {
     width: 65%;
   }
-
-  .footer-bottom p {
-    font-size: 14px;
-  }
 }
 </style>
+
 
 
 
@@ -1231,6 +1203,7 @@ window.addEventListener('unload',()=>{
 </body>
 
 </html>
+
 
 
 
